@@ -1,0 +1,30 @@
+version: "3.7"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./docker/go/Dockerfile
+      target: dev
+      args:
+        - PROJECT_WORKING_DIR=${PROJECT_WORKING_DIR}
+    container_name: api
+    tty: true
+    stdin_open: true
+    ports:
+      - 1323:1323
+    volumes:
+      - ./src:/src
+    env_file:
+      - ./.env
+  db:
+    image: mysql:8.0
+    ports:
+      -  "3308:3306"
+    volumes:
+      -  ./docker/db/my.conf:/etc/mysql/conf.d/my.cnf
+    environment:
+      - MYSQL_DATABASE=${DB_NAME}
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${DB_PASS}
+      - MYSQL_ROOT_PASSWORD=${DB_PASS}
