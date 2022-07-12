@@ -1,0 +1,5 @@
+ApiKey:
+  type: "apiKey"
+  name: "Authorization"
+  in: "header"
+  description: Backlog APIキー（個人設定 > API > APIキー ※発行していない方は発行してください）

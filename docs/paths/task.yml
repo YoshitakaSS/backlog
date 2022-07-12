@@ -1,0 +1,44 @@
+parameters:
+  - name: user_id
+    in: path
+    schema:
+      type: string
+    required: true
+    description: "個人設定 > ユーザー情報 > ユーザ-IDの値"
+  - name: project_key
+    in: path
+    schema:
+      type: string
+    required: true
+    description: "プロジェクトの名称 例）https://sample.backlog.jp/projects/{SAMPLE}"
+  - name: host_name
+    in: path
+    schema:
+      type: string
+    required: true
+    description: "自分が参加しているBacklogのhost部分 例）https://{sample.backlog.jp}/"
+get:
+  summary: Task Summary
+  security:
+    - ApiKey: []
+  responses:
+    "200":
+      description: 成功
+      content:
+        application/json:
+    #       schema:
+    #         title: get_course_response
+    #         type: object
+    #         properties:
+    #           course:
+    #             $ref: "../components/course.yml#/course"
+    #           chapters:
+    #             type: array
+    #             items:
+    #               $ref: "../components/chapters.yml#chapter"
+    # "404":
+    #   description: 指定されたUserIdがない
+    #   content:
+    #     application/json:
+    #       schema:
+    #         $ref: "../components/error.yml#/error_response"

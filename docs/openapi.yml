@@ -1,0 +1,19 @@
+openapi: 3.0.1
+info:
+  title: "Backlog Tool API"
+  version: "1.0.0"
+  description: BacklogのAPIをより使いやすくするAPI
+
+servers:
+  - url: https://backlog-tools/api/v1
+
+security:
+  - ApiKey: []
+
+paths:
+  /task:
+    $ref: "./paths/task.yml"
+
+components:
+  schemas:
+    $ref: "./components/index.yaml"

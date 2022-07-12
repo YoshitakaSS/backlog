@@ -1,0 +1,4 @@
+securitySchemes:
+  $ref: ./authorize.yml
+# ResponseBadRequest:
+#   $ref: ./components/response_400_bad_request.yaml
