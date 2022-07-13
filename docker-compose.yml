@@ -1,7 +1,7 @@
 version: "3.7"
 
 services:
-  api:
+  backlog-api:
     build:
       context: .
       dockerfile: ./docker/go/Dockerfile
@@ -17,14 +17,14 @@ services:
       - ./src:/src
     env_file:
       - ./.env
-  db:
-    image: mysql:8.0
-    ports:
-      -  "3308:3306"
-    volumes:
-      -  ./docker/db/my.conf:/etc/mysql/conf.d/my.cnf
-    environment:
-      - MYSQL_DATABASE=${DB_NAME}
-      - MYSQL_USER=${DB_USER}
-      - MYSQL_PASSWORD=${DB_PASS}
-      - MYSQL_ROOT_PASSWORD=${DB_PASS}
+  # db:
+  #   image: mysql:8.0
+  #   ports:
+  #     -  "3308:3306"
+  #   volumes:
+  #     -  ./docker/db/my.conf:/etc/mysql/conf.d/my.cnf
+  #   environment:
+  #     - MYSQL_DATABASE=${DB_NAME}
+  #     - MYSQL_USER=${DB_USER}
+  #     - MYSQL_PASSWORD=${DB_PASS}
+  #     - MYSQL_ROOT_PASSWORD=${DB_PASS}
