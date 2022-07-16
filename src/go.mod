@@ -4,6 +4,7 @@ go 1.16
 
 require (
 	github.com/joho/godotenv v1.4.0 // indirect
+	github.com/kenzo0107/backlog v0.0.0-20220114050523-e503af2e0073 // indirect
 	github.com/labstack/echo v3.3.10+incompatible
 	github.com/labstack/echo/v4 v4.6.3 // indirect
 )
